@@ -1,4 +1,5 @@
 import sys
+
 file = sys.argv[1]
 '''
 target_fw = open(sys.argv[2],'w')
@@ -19,11 +20,11 @@ count = 0.0
 goldlines = open(sys.argv[1]).readlines()
 predlines = open(sys.argv[2]).readlines()
 for goldline, predline in zip(goldlines, predlines):
-	goldline = goldline.lower().strip()
-	predline = predline.lower().strip()
-	goldline = " ".join([x for x in goldline.lower().split(' ') if x in ['yes','no']])
-        predline = " ".join([x for x in predline.lower().split(' ') if x in ['yes','no']])	
-	if goldline==predline:
-            acc=acc+1.0	
-	count+=1.0
-print acc/count
+    goldline = goldline.lower().strip()
+    predline = predline.lower().strip()
+    goldline = " ".join([x for x in goldline.lower().split(' ') if x in ['yes', 'no']])
+    predline = " ".join([x for x in predline.lower().split(' ') if x in ['yes', 'no']])
+    if goldline == predline:
+        acc = acc + 1.0
+    count += 1.0
+print acc / count
